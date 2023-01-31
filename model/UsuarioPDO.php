@@ -21,19 +21,19 @@ class UsuarioPDO implements UsuarioDB {
         }
     }
 
-    public static function registrarUltimaConexion($ousuario) {
+    public static function registrarUltimaConexion($oUsuario) {
 // Actualiza el numero de conexiones del objeto usuario y la ultima conexion anterior por la ultima conexion        
-        $ousuario->setfechaHoraUltimaConexionAnterior($ousuario->getfechaHoraUltimaConexion());
-        $ousuario->setFechaHoraUltimaConexion(new DateTime());
-        $ousuario->setNumAccesos($ousuario->getNumAccesos() + 1);
-        $fechaHoraSQL = $ousuario->getFechaHoraUltimaConexion();
-        $fechaHoraSQLString= $fechaHoraSQL->format("Y-m-d H:i:s");
+        $oUsuario->setfechaHoraUltimaConexionAnterior($oUsuario->getfechaHoraUltimaConexion());
+        $oUsuario->setFechaHoraUltimaConexion(new DateTime());
+        $oUsuario->setNumAccesos($oUsuario->getNumAccesos() + 1);
+        $fechaHoraSQL = $oUsuario->getFechaHoraUltimaConexion();
+        $fechaHoraSQLString = $fechaHoraSQL->format("Y-m-d H:i:s");
 //Definicion de la sentencia SQL
-        $sqlActualizarConexiones = "UPDATE T01_Usuario SET T01_NumConexiones = '{$ousuario->getNumAccesos()}', T01_FechaHoraUltimaConexion = '{$fechaHoraSQLString}' WHERE T01_CodUsuario = '{$ousuario->getCodUsuario()}';";
+        $sqlActualizarConexiones = "UPDATE T01_Usuario SET T01_NumConexiones = '{$oUsuario->getNumAccesos()}', T01_FechaHoraUltimaConexion = '{$fechaHoraSQLString}' WHERE T01_CodUsuario = '{$oUsuario->getCodUsuario()}';";
 //Ejecucion de la sentencia usando la clase DBPDO       
         $ingresado = DBPDO::ejecutarConsulta($sqlActualizarConexiones);
 // Devuelve el objeto usuario        
-        return $ousuario;
+        return $oUsuario;
     }
+
 }
-?>
