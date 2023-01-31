@@ -326,6 +326,9 @@ footer img:hover {
   align-self: end;
 }
 
-
-
-
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
