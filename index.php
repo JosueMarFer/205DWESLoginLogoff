@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-            <html lang="en">
-                <head>
-                    <meta charset="UTF-8" />
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <title>205ProyectoLoginLogoff</title>
-                </head>
-                <body>
-                    <h1>Josue martinez Fernandez</h1>
-                    <h3>Login Logoff</h3>
-                </body>
-            </html>
+<?php
+//@author Josue Martinez Fernandez
+//@version 1.0
+//ultima actualizacion 12/01/2023
+require_once './config/confDBPDO.php'; //Configuración de la base de datos
+require_once './config/confAPP.php'; //Configuración de la aplicacion
+
+session_start(); //Inicia la sesión
+
+if (!isset($_SESSION['paginaEnCurso'])) {
+    $_SESSION['paginaEnCurso'] = 'inicioPublico';
+}
+
+require_once $aControladores[$_SESSION['paginaEnCurso']];
+?>
+
