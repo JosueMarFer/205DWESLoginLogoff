@@ -16,7 +16,6 @@ $aControladores = [
     'inicioPublico' => './controller/cInicioPublico.php',
     'inicioPrivado' => './controller/cInicioPrivado.php',
     'error' => './controller/cError.php',
-    'registro' => './controller/cRegistro.php',
     'detalle' => './controller/cDetalle.php'
 ];
 
@@ -26,6 +25,5 @@ $aVistas = [
     'inicioPublico' => './view/vInicioPublico.php',
     'inicioPrivado' => './view/vInicioPrivado.php',
     'error' => './view/vError.php',
-    'registro' => './view/vRegistro.php',
     'detalle' => './view/vDetalle.php'
 ];
