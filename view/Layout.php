@@ -25,7 +25,7 @@
         </main>
         <footer>
             <div class="footerIcons">
-                <a href="../doc/curriculum.pdf" target="_blank"><img src="./webroot/images/curriculum.png"
+                <a href="./doc/curriculum.pdf" target="_blank"><img src="./webroot/images/curriculum.png"
                                                                      alt="Imagen curriculum"></a>
                 <a href="https://github.com/JosueMarFer/205DWESLoginLogoff" target="_blank"><img
                         src="./webroot/images/github.png" alt="Imagen github"></a>
